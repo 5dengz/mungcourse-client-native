@@ -6,21 +6,27 @@
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
+// 멍코스 테마 색상
+export const THEME_COLOR = '#48CF6E';
+export const TEXT_COLOR = '#666666';
+export const BACKGROUND_COLOR = '#FFFFFF';
+export const CARD_BACKGROUND_COLOR = '#F5F5F5';
+
 export const Colors = {
   light: {
     text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
+    background: BACKGROUND_COLOR,
+    tint: THEME_COLOR,
     icon: '#687076',
     tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    tabIconSelected: THEME_COLOR,
   },
   dark: {
     text: '#ECEDEE',
     background: '#151718',
-    tint: tintColorDark,
+    tint: THEME_COLOR,
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    tabIconSelected: THEME_COLOR,
   },
 };
