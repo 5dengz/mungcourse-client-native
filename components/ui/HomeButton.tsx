@@ -21,7 +21,7 @@ export default function HomeButton({ title, iconName, onPress, style }: HomeButt
 
 const styles = StyleSheet.create({
   container: {
-    width: 170,
+    // width: 170, // 고정 너비 제거
     height: 110,
     backgroundColor: CARD_BACKGROUND_COLOR, // 카드 배경색 사용 (임시)
     borderRadius: 9,

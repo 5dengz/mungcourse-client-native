@@ -68,7 +68,7 @@ export default function HomeScreen() {
 
         {/* 산책 지수 영역 */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>오늘의 산책 지수</Text>
+          <Text style={styles.sectionTitle}>산책 지수</Text>
           <View style={styles.walkIndexCard}>
             <View style={styles.walkIndexRow}>
               <View style={styles.walkIndexItem}>
@@ -89,7 +89,7 @@ export default function HomeScreen() {
 
         {/* 지난 경로 영역 */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>지난 산책 경로</Text>
+          <Text style={styles.sectionTitle}>지난 경로</Text>
           <View style={styles.pastWalkCard}>
             <View style={styles.pastWalkHeader}>
               <Text style={styles.pastWalkDate}>2023년 6월 15일</Text>
@@ -142,14 +142,14 @@ const styles = StyleSheet.create({
   dogNameContainer: { // 강아지 이름 + 화살표 컨테이너
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomWidth: 2, // 밑줄 스타일을 컨테이너로 이동
+    borderBottomWidth: 1, // 밑줄 스타일을 컨테이너로 이동
     borderBottomColor: THEME_COLOR, // 밑줄 색상
     paddingBottom: 4, // 컨텐츠와 밑줄 사이 여백
     alignSelf: 'flex-start', // 컨테이너 너비를 내용에 맞춤
   },
   dogNameText: { // 강아지 이름 텍스트
     fontSize: 24,
-    fontWeight: 'semibold',
+    fontWeight: '600',
     color: THEME_COLOR,
     // borderBottom 스타일 제거
     // paddingBottom 제거
@@ -164,25 +164,24 @@ const styles = StyleSheet.create({
     fontWeight: 'normal', // 폰트 굵기 변경
     color: '#000000', // 색상 변경 (검정)
   },
-  // profileName 스타일 제거 (이제 사용하지 않음)
+
   profileImage: {
     width: 70, // 크기 변경
     height: 70, // 크기 변경
     borderRadius: 35, // 원형 유지를 위해 변경
-    // marginLeft 제거 (오른쪽 정렬을 위해)
   },
   buttonSection: {
     flexDirection: 'row', // 버튼을 가로로 배치
-    justifyContent: 'space-between', // 버튼 사이에 공간 분배
-    paddingHorizontal: 20,
-    paddingVertical: 16,
-    // alignItems 제거 (기본값 stretch 유지 또는 필요시 center)
+    // justifyContent: 'space-between', // space-between 대신 gap 사용
+    paddingHorizontal: 20, // 좌우 여백
+    paddingVertical: 16, // 상하 여백
+    gap: 9, // 버튼 사이 간격
   },
   leftButton: {
-    // 추가 스타일 필요시 여기에 정의
+    flex: 1, // 사용 가능한 공간을 차지하도록 설정
   },
   rightButton: {
-    // 추가 스타일 필요시 여기에 정의
+    flex: 1, // 사용 가능한 공간을 차지하도록 설정
   },
   // mainButton 및 mainButtonText 스타일 제거 (HomeButton으로 대체됨)
   section: {
