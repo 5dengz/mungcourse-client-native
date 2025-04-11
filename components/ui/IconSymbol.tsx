@@ -13,7 +13,9 @@ const MAPPING = {
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
-  'chevron.down': 'keyboard-arrow-down', // chevron.down 매핑 추가
+  'chevron.down': 'keyboard-arrow-down',
+  'figure.walk': 'directions-walk', // 산책 시작 아이콘 매핑 추가
+  'map.fill': 'map', // 코스 선택 아이콘 매핑 추가
 } as Partial<
   Record<
     import('expo-symbols').SymbolViewProps['name'],

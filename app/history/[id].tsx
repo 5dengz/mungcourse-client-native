@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 16,
+    paddingHorizontal: 20, // 좌우 여백 변경
+    paddingVertical: 16, // 상하 여백 유지 (기존 padding 값)
   },
 });

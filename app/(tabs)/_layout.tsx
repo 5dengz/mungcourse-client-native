@@ -18,47 +18,55 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
+        tabBarLabelStyle: { // 레이블 스타일 추가
+          marginTop: 4, // 아이콘과 텍스트 사이 여백 (텍스트 상단 여백)
+          fontSize: 11,
+          fontWeight: 'semibold',
+        },
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
+            height: 65, // iOS 탭 바 높이 설정
           },
-          default: {},
+          default: {
+            height: 65, // 기본(Android/Web) 탭 바 높이 설정
+          },
         }),
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: '홈',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="house.fill" color={color} />, // 아이콘 크기 원복 (24->28)
         }}
       />
       <Tabs.Screen
         name="walk"
         options={{
           title: '산책 시작',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="figure.walk" color={color} />,
+          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="figure.walk" color={color} />, // 아이콘 크기 원복 (24->28)
         }}
       />
       <Tabs.Screen
         name="routine"
         options={{
           title: '루틴 설정',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="calendar" color={color} />,
+          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="calendar" color={color} />, // 아이콘 크기 원복 (24->28)
         }}
       />
       <Tabs.Screen
         name="history"
         options={{
           title: '산책 기록',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="clock.fill" color={color} />,
+          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="clock.fill" color={color} />, // 아이콘 크기 원복 (24->28)
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: '프로필',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="person.fill" color={color} />,
+          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="person.fill" color={color} />, // 아이콘 크기 원복 (24->28)
         }}
       />
     </Tabs>

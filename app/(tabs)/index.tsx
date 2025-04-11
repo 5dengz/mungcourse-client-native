@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BACKGROUND_COLOR, CARD_BACKGROUND_COLOR, TEXT_COLOR, THEME_COLOR } from '@/constants/Colors';
-import { IconSymbol } from '@/components/ui/IconSymbol'; // IconSymbol 임포트 추가
+import { IconSymbol } from '@/components/ui/IconSymbol';
+import HomeButton from '@/components/ui/HomeButton'; // HomeButton 임포트 추가
 
 export default function HomeScreen() {
   return (
@@ -32,9 +33,18 @@ export default function HomeScreen() {
 
         {/* 버튼 영역 */}
         <View style={styles.buttonSection}>
-          <TouchableOpacity style={styles.mainButton}>
-            <Text style={styles.mainButtonText}>산책 시작하기</Text>
-          </TouchableOpacity>
+          <HomeButton
+            title="산책 시작"
+            iconName="figure.walk"
+            onPress={() => console.log('산책 시작 버튼 클릭')} // 임시 핸들러
+            style={styles.leftButton} // 왼쪽 버튼 스타일
+          />
+          <HomeButton
+            title="코스 선택"
+            iconName="map.fill"
+            onPress={() => console.log('코스 선택 버튼 클릭')} // 임시 핸들러
+            style={styles.rightButton} // 오른쪽 버튼 스타일
+          />
         </View>
 
         {/* 주변 산책로 영역 */}
@@ -107,7 +117,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   profileSection: {
-    padding: 16,
+    paddingHorizontal: 20, // 좌우 여백 변경
+    paddingVertical: 16, // 상하 여백 유지 (기존 padding 값)
     backgroundColor: BACKGROUND_COLOR,
   },
   profileHeader: {
@@ -161,24 +172,22 @@ const styles = StyleSheet.create({
     // marginLeft 제거 (오른쪽 정렬을 위해)
   },
   buttonSection: {
-    padding: 16,
-    alignItems: 'center',
+    flexDirection: 'row', // 버튼을 가로로 배치
+    justifyContent: 'space-between', // 버튼 사이에 공간 분배
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    // alignItems 제거 (기본값 stretch 유지 또는 필요시 center)
   },
-  mainButton: {
-    backgroundColor: THEME_COLOR,
-    paddingVertical: 14,
-    paddingHorizontal: 32,
-    borderRadius: 25,
-    width: '90%',
+  leftButton: {
+    // 추가 스타일 필요시 여기에 정의
   },
-  mainButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
-    textAlign: 'center',
+  rightButton: {
+    // 추가 스타일 필요시 여기에 정의
   },
+  // mainButton 및 mainButtonText 스타일 제거 (HomeButton으로 대체됨)
   section: {
-    padding: 16,
+    paddingHorizontal: 20, // 좌우 여백 변경
+    paddingVertical: 16, // 상하 여백 유지 (기존 padding 값)
   },
   sectionTitle: {
     fontSize: 18,
